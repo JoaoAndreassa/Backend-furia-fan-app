@@ -1,3 +1,13 @@
+# dependências
 node_modules
-# Keep environment variables out of version control
+
+# variáveis de ambiente
 .env
+
+# logs
+logs
+*.log
+npm-debug.log*
+
+# build do TypeScript (caso use tsconfig com outDir = dist)
+dist/
