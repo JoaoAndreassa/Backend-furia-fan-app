@@ -1,0 +1,26 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id             String   @id @default(uuid())
+  name           String
+  email          String   @unique
+  password       String
+  birthDate      DateTime?
+  city           String?
+  state          String?
+  instagram      String?
+  twitter        String?
+  twitch         String?
+  favoritePlayer String?
+  favoriteGame   String?
+  avatarUrl      String? // 👈 novo campo opcional
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
